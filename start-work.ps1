@@ -42,7 +42,8 @@ az container create `
   --acr-identity $MSI_ID `
   --environment-variables LUMON_ROLE=$ROLE REFINER_NAME="$currentUser"
 
-Write-Host "Connection established. Welcome to the terminal." -ForegroundColor Cyan
+Write-Host "Connection established. Synchronizing TTY..." -ForegroundColor Cyan
+Start-Sleep -Seconds 5
 az container attach --resource-group $RG --name $containerName
 
 # 5. Cleanup
