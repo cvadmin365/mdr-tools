@@ -25,7 +25,10 @@ $MSI_ID = $(az identity show --resource-group $RG --name $IDENTITY_NAME --query 
 
 # 4. Provision and Attach
 Write-Host "Initializing Terminal (Role: $ROLE)..." -ForegroundColor Green
-$containerName = "mdr-session-$($env:USERNAME)"
+
+# Use a safer naming convention for Cloud Shell (Linux-based)
+$cleanName = $currentUser.Replace(" ","").ToLower()
+$containerName = "mdr-session-$cleanName"
 
 az container create `
   --resource-group $RG `
