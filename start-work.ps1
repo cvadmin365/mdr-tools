@@ -1,7 +1,7 @@
 # --- Configuration ---
 $LEAD_GROUP_ID = "7707e9e7-bfad-4abc-92a0-655d5141c2cc"
 $RG            = "rg-mdr-production"
-$IMAGE         = "lumonregistry.azurecr.io/mdr-terminal:prod"
+$IMAGE = "lumonregistry.azurecr.io/mdr-terminal:v2"
 $IDENTITY_NAME = "id-mdr-worker-prod"
 
 # 1. Get current user's Entra ID context
